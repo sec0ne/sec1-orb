@@ -1,0 +1,19 @@
+description: >
+  Use the Sec1 Security orb inside a build job to scan the application dependencies for
+  known vulnerabilities
+# Provide a use-case based example for using this orb.
+# Everything in the `usage` section will be displayed in the orb registry.
+# Comments are not retained.
+usage:
+  version: 2.1
+  orbs:
+    sec1-security: sec1/sec1-orb@x.y.z
+  jobs:
+    build:
+      docker:
+        - image: cimg/node:lts
+      steps:
+        - checkout
+        - sec1-orb/scan:
+            api-key: SEC1_API_TOKEN
+            github_repo: GIT_REPOSITORY_URL

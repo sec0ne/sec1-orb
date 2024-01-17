@@ -5,13 +5,18 @@ description: >
 parameters:
   github_repo:
     type: string
-    default: "World"
+    default: ""
     description: "Repository url be scanned"
+  api_key:
+    type: string
+    default: ""
+    description: "Sec1 API Key" 
 steps:
   - checkout
   - setup_remote_docker
   - run:
       environment:
         PARAM_GITHUB_REPOSITORY: <<parameters.github_repo>>
+        PARAM_SEC1_API_KEY: <<parameters.api_key>>
       name: Run Sec1 FOSS Security
       command: <<include(scripts/scan.sh)>>
