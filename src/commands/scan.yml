@@ -1,0 +1,20 @@
+description: >
+  Scan the application dependencies for known vulnerabilities with Sec1 Security.
+# What will this command do?
+# Descriptions should be short, simple, and clear.
+parameters:
+  github_repo:
+    type: string
+    default: "World"
+    description: "Repository url be scanned"
+steps:
+  - checkout
+  - setup_remote_docker
+  - run:
+      environment:
+        GITHUB_REPOSITORY: <<parameters.github_repo>>
+      name: Run Sec1 FOSS Security
+      command: |
+        echo "hello world sec1 foss security"
+        docker pull sec1security/sec1-foss-security:v1
+        docker run -e GITHUB_SERVER_URL=https://github.com -e GITHUB_REPOSITORY=${GITHUB_REPOSITORY} -it --rm sec1security/sec1-foss-security:v1
