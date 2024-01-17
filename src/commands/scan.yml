@@ -12,9 +12,6 @@ steps:
   - setup_remote_docker
   - run:
       environment:
-        GITHUB_REPOSITORY: <<parameters.github_repo>>
+        PARAM_GITHUB_REPOSITORY: <<parameters.github_repo>>
       name: Run Sec1 FOSS Security
-      command: |
-        echo "hello world sec1 foss security"
-        docker pull sec1security/sec1-foss-security:v1
-        docker run -e GITHUB_SERVER_URL=https://github.com -e GITHUB_REPOSITORY=${GITHUB_REPOSITORY} -it --rm sec1security/sec1-foss-security:v1
+      command: <<include(scripts/scan.sh)>>
