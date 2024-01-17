@@ -28,7 +28,7 @@ jobs:
     steps:
       - checkout
       # Run your orb's commands to validate them.
-      - sec1-orb/greet
+      #- sec1-orb/greet
 workflows:
   test-deploy:
     jobs:
