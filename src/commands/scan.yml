@@ -10,7 +10,7 @@ parameters:
   api_key:
     type: string
     default: ""
-    description: "Sec1 API Key" 
+    description: "Sec1 API Key"
 steps:
   - checkout
   - setup_remote_docker
