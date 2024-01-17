@@ -6,4 +6,4 @@ GITHUB_REPOSITORY=$(circleci env subst "${PARAM_GITHUB_REPOSITORY}")
 #echo "Hello ${TO:-World}!"
 echo "hello world sec1 foss security"
 docker pull sec1security/sec1-foss-security:v1
-docker run -e GITHUB_SERVER_URL=https://github.com -e GITHUB_REPOSITORY=${GITHUB_REPOSITORY} -it --rm sec1security/sec1-foss-security:v1
+docker run -e GITHUB_SERVER_URL=https://github.com -e GITHUB_REPOSITORY="${GITHUB_REPOSITORY}" -it --rm sec1security/sec1-foss-security:v1
