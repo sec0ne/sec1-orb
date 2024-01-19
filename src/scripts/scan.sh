@@ -7,7 +7,7 @@ PARAM_SEC1_API_KEY=$(circleci env subst "${PARAM_SEC1_API_KEY}")
 #echo "Hello ${TO:-World}!"
 echo "hello world sec1 foss security"
 curl -k https://storage.cloud.google.com/sec1-shared-assets/sec1-cli-linux -o /tmp/sec1-cli
-cd /home/circeci/project
+cd /home/circeci/project || exit 1
 echo "Initiating scan in directory: $SCAN_DIRECTORY"
 /tmp/sec1-cli scan -s circleci --apiKey "${PARAM_SEC1_API_KEY}"
 docker pull sec1security/sec1-foss-security:v1
