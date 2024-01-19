@@ -10,7 +10,7 @@ parameters:
 steps:
   - checkout
   - attach_workspace:
-      at: /app/circleci-workspace
+      at: /tmp/circleci-workspace
   - setup_remote_docker
   - run:
       environment:
