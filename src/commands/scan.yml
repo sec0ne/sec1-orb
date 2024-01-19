@@ -9,7 +9,7 @@ parameters:
     description: "Sec1 API Key"
 steps:
   - checkout
-  - attach_workspace
+  - attach_workspace:
       at: /app/circleci-workspace
   - setup_remote_docker
   - run:
