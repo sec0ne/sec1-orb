@@ -8,5 +8,4 @@ PARAM_SEC1_API_KEY=$(circleci env subst "${PARAM_SEC1_API_KEY}")
 echo "hello world sec1 foss security"
 docker pull sec1security/sec1-foss-security:v1
 ls -latr /home/circleci/project
-whoami
-docker run -e SEC1_INTEGRATION_NAME="${SEC1_INTEGRATION_NAME}" -e INPUT_APIKEY="${PARAM_SEC1_API_KEY}" -v /home/circleci/project:/tmp/circleci-workspace -it --rm sec1security/sec1-foss-security:v1
+docker run -e SEC1_INTEGRATION_NAME="${SEC1_INTEGRATION_NAME}" -e INPUT_APIKEY="${PARAM_SEC1_API_KEY}" -v /home/circleci/project:/app/circleci-workspace -it --rm sec1security/sec1-foss-security:v1
