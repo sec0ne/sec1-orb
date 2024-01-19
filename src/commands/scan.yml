@@ -3,20 +3,18 @@ description: >
 # What will this command do?
 # Descriptions should be short, simple, and clear.
 parameters:
-  github_repo:
-    type: string
-    default: ""
-    description: "Repository url be scanned"
   api_key:
     type: string
     default: ""
     description: "Sec1 API Key"
 steps:
   - checkout
+  - attach_workspace
+      at: /app/circleci-workspace
   - setup_remote_docker
   - run:
       environment:
-        PARAM_GITHUB_REPOSITORY: <<parameters.github_repo>>
         PARAM_SEC1_API_KEY: <<parameters.api_key>>
-      name: Run Sec1 FOSS Security
+        SEC1_INTEGRATION_NAME: CIRCLECI
+      name: Sec1 Security
       command: <<include(scripts/scan.sh)>>
