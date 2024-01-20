@@ -7,6 +7,10 @@ parameters:
     type: string
     default: ""
     description: "Sec1 API Key"
+  scan_threshold:
+    type: string
+    default: ""
+    description: "Specify threshold values for each severity (e.g., critical=1 medium=5 high=10 low=50). A breach in thresholds will trigger a CI build failure."
 steps:
   - checkout
   - attach_workspace:
@@ -15,6 +19,7 @@ steps:
   - run:
       environment:
         PARAM_SEC1_API_KEY: <<parameters.api_key>>
+        PARAM_SCAN_THRESHOLD: <<parameters.scan_threshold>>
         SEC1_INTEGRATION_NAME: CIRCLECI
       name: Sec1 Security
       command: <<include(scripts/scan.sh)>>
