@@ -18,7 +18,8 @@ cd /home/circleci/project || exit 1
 
 if [ -n "$INPUT_SCANTHRESHOLD" ]; then
   ls -latr /home/circleci/project
-  /tmp/sec1-cli scan -s cli --apiKey "${PARAM_SEC1_API_KEY}" -th "${INPUT_SCANTHRESHOLD}"
+  echo "Initiating with threshold setting: $INPUT_SCANTHRESHOLD"
+  /tmp/sec1-cli scan -s cli --apiKey "${PARAM_SEC1_API_KEY}" --threshold "${INPUT_SCANTHRESHOLD}"
 else
   ls -latr /home/circleci/project
   /tmp/sec1-cli scan -s cli --apiKey "${PARAM_SEC1_API_KEY}"
