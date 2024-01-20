@@ -14,10 +14,10 @@ ls -latr /tmp
 echo "Initiating scan in directory: /home/circleci/project"
 cd /home/circleci/project || exit 1
 
-
+THRESHOLD_ARG=""
 
 if [ -n "$INPUT_SCANTHRESHOLD" ]; then
-  THRESHOLD_ARG=-th $INPUT_SCANTHRESHOLD
+  THRESHOLD_ARG="-th" "$INPUT_SCANTHRESHOLD"
 fi
 
 ls -latr /home/circleci/project
