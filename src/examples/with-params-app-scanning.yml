@@ -16,4 +16,3 @@ usage:
         - checkout
         - sec1-orb/scan:
             api-key: SEC1_API_TOKEN
-            github_repo: GIT_REPOSITORY_URL
