@@ -1,4 +1,4 @@
-# Orb Template
+# Sec1 Security Orb
 
 
 [![CircleCI Build Status](https://circleci.com/gh/sec0ne/sec1-orb.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/sec0ne/sec1-orb) [![CircleCI Orb Version](https://badges.circleci.com/orbs/sec1/sec1-orb.svg)](https://circleci.com/developer/orbs/orb/sec1/sec1-orb) [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/sec0ne/sec1-orb/master/LICENSE) [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
@@ -9,7 +9,7 @@ A project template for Orbs.
 
 This repository is designed to be automatically ingested and modified by the CircleCI CLI's `orb init` command.
 
-_**Edit this area to include a custom title and description.**_
+_**Sec1 Security**_
 
 ---
 
