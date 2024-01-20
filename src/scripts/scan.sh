@@ -20,7 +20,7 @@ if [ -n "$INPUT_SCANTHRESHOLD" ]; then
 fi
 
 ls -latr /home/circleci/project
-/tmp/sec1-cli scan -s cli --apiKey "${PARAM_SEC1_API_KEY}" $THRESHOLD_ARG
+/tmp/sec1-cli scan -s cli --apiKey "${PARAM_SEC1_API_KEY}" "$THRESHOLD_ARG"
 #docker pull sec1security/sec1-foss-security:v1
 #ls -latr /home/circleci/project
 #docker run -e SEC1_INTEGRATION_NAME="${SEC1_INTEGRATION_NAME}" -e INPUT_APIKEY="${PARAM_SEC1_API_KEY}" -v /home/circleci/project:/app/circleci-workspace -it --rm sec1security/sec1-foss-security:v1
