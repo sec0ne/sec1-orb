@@ -4,7 +4,7 @@ description: >
   Sec1 Security enables modern applications to be built securely. Use Sec1 to find, fix
   and monitor known vulnerabilities in your app dependencies, container images,
   cloud infrastructure and code. To use this orb, you need to have a
-  Sec1 account and an API token.
+  Sec1 account and a Sec1 API token.
 # What will your orb allow users to accomplish?
 # Descriptions should be short, simple, and informative.
 
