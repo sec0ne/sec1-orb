@@ -1,0 +1,23 @@
+description: >
+  Use the Sec1 Security orb inside a build job to scan the application dependencies for
+  known vulnerabilities. Set the threshold values using scan_threshold for different severity critical, high, medium & low
+# Provide a use-case based example for using this orb.
+# Everything in the `usage` section will be displayed in the orb registry.
+# Comments are not retained.
+usage:
+  version: 2.1
+  orbs:
+    sec1-orb: sec1/sec1-orb@1.0.14   
+  jobs:
+    build:
+      docker:
+        - image: cimg/node:lts
+      steps:
+        - sec1-orb/scan:
+            api_key: ${SEC1_API_KEY}
+            scan_threshold: critical=0 high=0 medium=0
+  workflows:
+    my-workflow:
+      jobs:
+        - build
+

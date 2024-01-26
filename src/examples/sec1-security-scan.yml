@@ -7,12 +7,15 @@ description: >
 usage:
   version: 2.1
   orbs:
-    sec1-security: sec1/sec1-orb@x.y.z
+    sec1-orb: sec1/sec1-orb@1.0.14   
   jobs:
     build:
       docker:
         - image: cimg/node:lts
       steps:
-        - checkout
         - sec1-orb/scan:
-            api-key: SEC1_API_TOKEN
+            api_key: ${SEC1_API_KEY}
+  workflows:
+    my-workflow:
+      jobs:
+        - build
