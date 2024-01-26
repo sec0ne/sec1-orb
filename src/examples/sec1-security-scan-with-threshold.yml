@@ -7,7 +7,7 @@ description: >
 usage:
   version: 2.1
   orbs:
-    sec1-orb: sec1/sec1-orb@1.0.14   
+    sec1-orb: sec1/sec1-orb@1.0.14
   jobs:
     build:
       docker:
@@ -20,4 +20,3 @@ usage:
     my-workflow:
       jobs:
         - build
-
